@@ -348,3 +348,4 @@ if st.button("診断する 🎬"):
     }
 
     st.info(advice[result])
+
