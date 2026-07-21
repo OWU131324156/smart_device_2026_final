@@ -1,3 +1,4 @@
+import random
 from google import genai
 import streamlit as st
 
@@ -14,14 +15,84 @@ st.set_page_config(
     layout="centered"
 )
 
-st.markdown(
-    """
-    <h1 style='text-align:center;'>
-    🎬 細田守キャラクター診断
-    </h1>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("""
+<style>
+
+/* 全体背景 */
+.stApp {
+    background: linear-gradient(135deg, #f0fff8 0%, #e8f7ff 100%);
+}
+
+/* タイトル */
+.main-title {
+    text-align: center;
+    color: #2e8b57;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 説明文 */
+.subtitle {
+    text-align: center;
+    color: #5f9ea0;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* 質問カード */
+.question-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    border-left: 6px solid #7fd8be;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+}
+
+/* ボタン */
+.stButton > button {
+    background: linear-gradient(90deg,#7fd8be,#87cefa);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(90deg,#6bc9ad,#73c3f5);
+    transform: scale(1.02);
+}
+
+/* ラジオボタンの文字 */
+.stRadio label {
+    color: #2f4f4f !important;
+    font-weight: 500;
+}
+
+/* 結果表示 */
+.result-box {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="main-title">
+🎬 細田守キャラクター診断
+</div>
+
+<div class="subtitle">
+質問に答えて、あなたにぴったりのキャラクターを見つけよう！
+</div>
+""", unsafe_allow_html=True)
 
 st.write("質問に答えて、あなたにぴったりのキャラクターを見つけよう！")
 
@@ -179,7 +250,7 @@ if st.button("診断する 🎬"):
     if result == "健二":
 
         st.balloons()
-        st.image("s:\kenji.jpg", use_container_width=True)
+        st.image("kenji.jpg", use_container_width=True)
 
         st.success("あなたは『健二タイプ』です！")
 
@@ -197,7 +268,7 @@ if st.button("診断する 🎬"):
     elif result == "花":
 
         st.snow()
-        st.image("s:\hana.jpg", use_container_width=True)
+        st.image("hana.jpg", use_container_width=True)
 
         st.success("あなたは『花タイプ』です！")
 
@@ -214,7 +285,7 @@ if st.button("診断する 🎬"):
 
     elif result == "九太":
 
-        st.image("s:\kyuta.jpg", use_container_width=True)
+        st.image("kyuta.jpg", use_container_width=True)
 
         st.success("あなたは『九太タイプ』です！")
 
@@ -232,7 +303,7 @@ if st.button("診断する 🎬"):
     elif result == "すず":
 
         st.balloons()
-        st.image("s:\suzu.jpg", use_container_width=True)
+        st.image("suzu.jpg", use_container_width=True)
 
         st.success("あなたは『すずタイプ』です！")
 
@@ -249,7 +320,7 @@ if st.button("診断する 🎬"):
 
     else:
 
-        st.image("s:\mirai.jpg", use_container_width=True)
+        st.image("kunchan.jpg", use_container_width=True)
 
         st.success("あなたは『くんちゃんタイプ』です！")
 
@@ -277,4 +348,3 @@ if st.button("診断する 🎬"):
     }
 
     st.info(advice[result])
-
