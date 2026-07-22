@@ -154,7 +154,7 @@ if st.button("診断する 🎬"):
 
     # Q1
     if q1 == "友達と遊ぶ":
-        scores["健二"] += 2
+        scores["健二"] += 1
     elif q1 == "家族と過ごす":
         scores["花"] += 2
     elif q1 == "新しいことに挑戦":
@@ -184,7 +184,7 @@ if st.button("診断する 🎬"):
 
     # Q4
     if q4 == "明るい":
-        scores["健二"] += 2
+        scores["健二"] += 1
     elif q4 == "優しい":
         scores["花"] += 2
     elif q4 == "努力家":
