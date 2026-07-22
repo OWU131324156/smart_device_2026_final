@@ -18,90 +18,150 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* 全体背景 */
+/* ===== 背景 ===== */
 .stApp {
-    background: linear-gradient(135deg, #f0fff8 0%, #e8f7ff 100%);
+    background:
+    linear-gradient(
+        180deg,
+        #7ec8ff 0%,
+        #bde8ff 40%,
+        #ffffff 100%
+    );
 }
 
-/* タイトル */
+/* ===== タイトル ===== */
 .main-title {
     text-align: center;
-    color: #2e8b57;
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+
+    text-shadow:
+        3px 3px 0 #4aa3df,
+        6px 6px 15px rgba(0,0,0,0.2);
+
     margin-bottom: 10px;
 }
 
-/* 説明文 */
+/* ===== サブタイトル ===== */
 .subtitle {
     text-align: center;
-    color: #5f9ea0;
-    font-size: 1.1rem;
+    color: #1f4f82;
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 30px;
 }
 
-.question-card {
+/* ===== ラジオボタン全体をカード化 ===== */
+div[data-testid="stRadio"] {
+
     background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(8px);
 
-    padding: 15px;
-    border-radius: 20px;
+    backdrop-filter: blur(12px);
+
+    border-radius: 24px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,0.08),
-        0 2px 6px rgba(0,0,0,0.05);
+        0 8px 20px rgba(0,0,0,0.08);
 
-    margin-bottom: 10px;
-
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
 
-.question-card:hover {
-    transform: translateY(-3px);
+div[data-testid="stRadio"]:hover {
+
+    transform: translateY(-4px);
+
     box-shadow:
-        0 12px 28px rgba(0,0,0,0.12),
-        0 4px 10px rgba(0,0,0,0.08);
+        0 14px 28px rgba(0,0,0,0.12);
 }
 
-/* 質問カード */
-.question-card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 15px;
-    border-left: 6px solid #7fd8be;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    margin-bottom: 15px;
+/* ===== ラジオ文字 ===== */
+.stRadio label {
+    color: #203040 !important;
+    font-weight: 600;
 }
 
-/* ボタン */
+/* ===== ボタン ===== */
 .stButton > button {
-    background: linear-gradient(90deg,#7fd8be,#87cefa);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    height: 50px;
+
     width: 100%;
-    font-size: 20px;
+    height: 60px;
+
+    border-radius: 40px;
+
+    border: none;
+
+    font-size: 22px;
     font-weight: bold;
+
+    color: white;
+
+    background:
+    linear-gradient(
+        90deg,
+        #4facfe,
+        #00f2fe
+    );
+
+    box-shadow:
+        0 8px 20px rgba(79,172,254,0.4);
+
+    transition: all .3s ease;
 }
 
 .stButton > button:hover {
-    background: linear-gradient(90deg,#6bc9ad,#73c3f5);
-    transform: scale(1.02);
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 12px 25px rgba(79,172,254,0.5);
 }
 
-/* ラジオボタンの文字 */
-.stRadio label {
-    color: #2f4f4f !important;
-    font-weight: 500;
-}
+/* ===== 成功メッセージ ===== */
+.stSuccess {
 
-/* 結果表示 */
-.result-box {
-    background: white;
-    padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== 情報ボックス ===== */
+.stInfo {
+
+    border-radius: 20px;
+}
+
+/* ===== 画像 ===== */
+img {
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== 見出し ===== */
+h1,h2,h3 {
+
+    color: #1f4f82;
+}
+
+/* ===== 区切り線 ===== */
+hr {
+
+    border: none;
+
+    height: 2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #4facfe,
+        transparent
+    );
 }
 
 </style>
