@@ -81,6 +81,29 @@ st.markdown("""
     box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 
+.question-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+
+    padding: 15px;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.08),
+        0 2px 6px rgba(0,0,0,0.05);
+
+    margin-bottom: 10px;
+
+    transition: all 0.3s ease;
+}
+
+.question-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.12),
+        0 4px 10px rgba(0,0,0,0.08);
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -333,20 +356,7 @@ if st.button("診断する 🎬"):
         st.subheader("🎬 おすすめ映画")
         st.write("未来のミライ")
 
-    quotes = {
-    "健二": "よろしくお願いしまぁぁぁす！",
-    "花": "あなたはあなたのままでいい。",
-    "九太": "強くなりたいんだ。",
-    "すず": "歌うことで私は変われる。",
-    "くんちゃん": "未来から来たんだ。"
-}
-
-st.markdown(f"""
-### 💬 キャラクターからのメッセージ
-
-> {quotes[result]}
-""")
-
+    
     st.divider()
 
     st.subheader("💡 ワンポイントアドバイス")
