@@ -431,3 +431,44 @@ if st.button("診断する 🎬"):
 
     st.info(advice[result])
 
+st.divider()
+st.subheader("🎬 あなたが細田守作品の世界に入ったら…")
+
+prompt = f"""
+あなたは細田守作品に登場する「{result}タイプ」の人物です。
+
+ユーザーの回答は以下の通りです。
+
+Q1（休日）: {q1}
+Q2（困難に直面したら）: {q2}
+Q3（一番大切なもの）: {q3}
+Q4（性格）: {q4}
+Q5（好きな物語）: {q5}
+Q6（相談されたら）: {q6}
+Q7（好きな場所）: {q7}
+Q8（強み）: {q8}
+
+この回答を参考にして、
+ユーザーが細田守作品の世界に入ったらどんな役割になるのか、
+300文字以内で物語風に書いてください。
+
+条件
+・主人公や仲間と協力する場面を入れる
+・回答内容を反映する
+・前向きでワクワクする雰囲気
+・最後は希望のある終わり方にする
+・日本語で書く
+"""
+
+try:
+    response = client.models.generate_content(
+        model=MODEL_NAME,
+        contents=prompt
+    )
+
+    st.success("✨ AIがあなただけの物語を作りました！")
+    st.write(response.text)
+
+except Exception as e:
+    st.error("AIによる物語の生成に失敗しました。")
+    st.error(e)
