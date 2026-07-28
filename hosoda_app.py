@@ -227,8 +227,6 @@ q8 = st.radio(
 
 if st.button("診断する 🎬"):
 
-    st.info("⏳ 結果の表示まで少し時間がかかる場合があります。しばらくお待ちください。")
-
     scores = {
         "健二": 0,
         "花": 0,
@@ -432,6 +430,8 @@ if st.button("診断する 🎬"):
     }
 
     st.info(advice[result])
+
+st.info("⏳ 結果の表示まで少し時間がかかる場合があります。しばらくお待ちください。")
 
 st.divider()
 st.subheader("🎬 あなたが細田守作品の世界に入ったら…")
