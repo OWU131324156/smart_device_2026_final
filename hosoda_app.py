@@ -431,9 +431,10 @@ if st.button("診断する 🎬"):
 
     st.info(advice[result])
 
+st.divider()
+
 st.info("⏳ 結果の表示まで少し時間がかかる場合があります。しばらくお待ちください。")
 
-st.divider()
 st.subheader("🎬 あなたが細田守作品の世界に入ったら…")
 
 prompt = f"""
